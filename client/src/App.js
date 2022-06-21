@@ -7,10 +7,10 @@ import Login from './components/Login';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      {/* <Navbar/> */}
       <Login/>
-      <Signup/>
-      <Footer/>
+      {/* <Signup/>
+      <Footer/> */}
     </div>
   );
 }
