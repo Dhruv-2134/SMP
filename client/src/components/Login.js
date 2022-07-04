@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../Private/css/Login.css';
 
+
 function Login() {
   
   const [userName, setUserName ] = useState("");
@@ -80,9 +81,11 @@ function Login() {
 
             <label htmlFor="remember" className="checkbox-hero">
               <input onClick={()=> setRemeberMe((preValue) => (!preValue))} type="checkbox" name="remember" id="remember" />
+
               <span className="checkbox-cover"></span>
               <span className="checkbox-name"> Remember Me </span>
             </label>
+
 
             <button onClick={submitLogin} type="submit" className="submit-btn btn">Login</button>
 
@@ -95,6 +98,7 @@ function Login() {
       </div>
     </div>
   );
+
 }
 
 export default Login;

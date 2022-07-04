@@ -1,3 +1,4 @@
+
 login-root a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
     margin: 0;
     padding: 0;
@@ -5,7 +6,6 @@ login-root a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,bo
     font-size: 100%;
     vertical-align: baseline
 }
-
 
 login-root article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     display: block;
@@ -177,6 +177,7 @@ html {
 }
 
 .login-logo{
+
     width: 7rem;
     height: 7rem;
     padding: .5rem;
@@ -204,7 +205,9 @@ html {
     max-width: 90%;
 
 }
+
 .login-logo{
+
     width: 50%;
     height: auto;
 }
