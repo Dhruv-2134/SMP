@@ -53,7 +53,7 @@ function Login() {
         
             <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/Indian_Institute_of_Information_Technology%2C_Bhagalpur_logo.png" className="login-logo" />
             
-            <h6 className="login-title">Student Portal</h6>
+            <h6 className="login-title login-portal-text">Student Portal</h6>
           </div>
           <form onSubmit={()=> {}} className="form">
             <label className="input-hero password-input" htmlFor="userName">

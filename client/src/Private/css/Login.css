@@ -77,6 +77,7 @@ html {
     }
 }
 
+
 .login-modal {
     display: flex;
     position: fixed;
@@ -360,5 +361,22 @@ html {
     }
     .form-hero{
         width: 100vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .login-logo {
+        width: 45%;
+    }
+    .login-portal-text {
+        display: none;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .login-logo {
+        width: 50%;
+    }
+    .login-portal-text {
+        display: block;
     }
 }
