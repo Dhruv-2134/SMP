@@ -14,7 +14,7 @@ const app = express();
 app.set('view engine','ejs');
 app.use(express.static(__dirname+"/"));
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(express.json());
 app.use('/newstudent',require('./router/newstudent'));
 
 
