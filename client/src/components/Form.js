@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import '../Private/css/Form.css'
 
@@ -32,36 +32,43 @@ const changeApplicationFor = (event) =>{
   setApplicationFor(event.target.value);
   if(event.target.value=='leave'){
     setApplicationBoolean(false);
+    setDocumentSelection('');
     } else {
       setApplicationBoolean(true);
     }
 }
 
 const changeDocumentType = (event) =>{
-  changeDocumentType(event.target.value);
+  // changeDocumentType(event.target.value);
+  setDocumentSelection(event.target.value);
+  
 
-  if(event.target.value=='fee-receipt'){
-    setDocumentTypeVariable('fee-receipt');
-  }
-  if(event.target.value=='fee-demand-letter'){
-    setDocumentTypeVariable('fee-demand-letter');
-  }
-  if(event.target.value=='transcript'){
-    setDocumentTypeVariable('transcript');
-  }
-  if(event.target.value=='provisional-certificate'){
-    setDocumentTypeVariable('provisional-certificate');
-  }
-  if(event.target.value=='migration-certificate'){
-    setDocumentTypeVariable('migration-certificate');
-  }
-  if(event.target.value=='temporary-id-card'){
-    setDocumentTypeVariable('temporary-id-card');
-  }
-  if(event.target.value=='other'){
-    setDocumentTypeVariable('other');
-  }
+
+
+  // if(event.target.value=='fee-receipt'){
+  //   setDocumentTypeVariable('fee-receipt');
+  // }
+  // if(event.target.value=='fee-demand-letter'){
+  //   setDocumentTypeVariable('fee-demand-letter');
+  // }
+  // if(event.target.value=='transcript'){
+  //   setDocumentTypeVariable('transcript');
+  // }
+  // if(event.target.value=='provisional-certificate'){
+  //   setDocumentTypeVariable('provisional-certificate');
+  // }
+  // if(event.target.value=='migration-certificate'){
+  //   setDocumentTypeVariable('migration-certificate');
+  // }
+  // if(event.target.value=='temporary-id-card'){
+  //   setDocumentTypeVariable('temporary-id-card');
+  // }
+  // if(event.target.value=='other'){
+  //   setDocumentTypeVariable('other');
+  // }
 }
+
+useEffect (()=> {console.log(documentSelection)});
 
 const changeReason = (event) =>{
   setReason(event.target.value);
@@ -91,6 +98,8 @@ const changeRemarks = (event) =>{
 
   // Boolean Variables
   const [applicationBoolean,setApplicationBoolean]= useState(true);
+
+  const [documentSelection,setDocumentSelection]=useState('');
 
   return (
     <div className='box'>
@@ -164,7 +173,7 @@ const changeRemarks = (event) =>{
             <label htmlFor="document-selection">Document</label>
             <select autoComplete='off' name="document-selection" onChange={changeDocumentType} className='field' id="document-selection">
             <option disabled selected value> -- Select an option -- </option>
-            <option value="migration">Bonafide Certificate</option>
+            <option value="bonafide">Bonafide Certificate</option>
             <option value="fee-receipt">Fee Receipt</option>
             <option value="fee-demand-letter">Fee Demand Letter</option>
             <option value="transcript">Transcript</option>
@@ -181,23 +190,30 @@ const changeRemarks = (event) =>{
             </div>
           }
 
-          
-  if(documentTypeVariable=='fee-receipt'){
-  <div className="form-element">    {/* This field will appear only when we choose the Fee Receipt or Fee Demand Letter option in the Document field */}
+{(() => {
+        if (documentSelection==='bonafide') {
+          return (
+            <div>
+              some field
+            </div>
+          )
+        } else if (documentSelection==='fee-receipt') {
+          return (
+            <div className="form-element">    {/* This field will appear only when we choose the Fee Receipt or Fee Demand Letter option in the Document field */}
   <label htmlFor="semester">Semester</label>
   <input type="text" autoComplete='off' name="semester" value={semester} onChange={changeSemester} className='field' id="semester" />
   </div>
-  }
-
-  if(documentTypeVariable=='fee-demand-letter'){
-  <div className="form-element">    {/* This field will appear only when we choose the Fee Receipt or Fee Demand Letter option in the Document field */}
+          )
+        } else if (documentSelection==='fee-demand-letter') {
+          return (
+            <div className="form-element">    {/* This field will appear only when we choose the Fee Receipt or Fee Demand Letter option in the Document field */}
   <label htmlFor="semester">Semester</label>
   <input type="text" autoComplete='off' name="semester" value={semester} onChange={changeSemester} className='field' id="semester" />
   </div>
-  }
-
-  if(event.target.value=='transcript'){
-     <div className="form-element">    {/* This field will appear only when we choose the Transcript option in the Application for field */}
+          )
+        } else if (documentSelection==='transcript') {
+          return (
+            <div className="form-element">    {/* This field will appear only when we choose the Transcript option in the Application for field */}
      <div>
      Transcript Application Form
      </div>
@@ -205,31 +221,34 @@ const changeRemarks = (event) =>{
        --Link--
      </div>
    </div>
-
-    <div className="form-element">    {/* This field will appear only when we choose the Migration Certificate or Transcript option in the Application for field */}
+          )
+        } else if (documentSelection==='provisional-certificate') {
+          return (
+            <div>
+              some field
+            </div>
+          )
+        } else if (documentSelection==='migration-certificate') {
+          return (
+            <div className="form-element">    {/* This field will appear only when we choose the Migration Certificate or Transcript option in the Application for field */}
     <label htmlFor="semester">Upload Fee Receipt</label>
     <input type="file" autoComplete='off' id="semester" className='field file' name="semester"></input>
     </div>
-  }
-
-  if(event.target.value=='provisional-certificate'){
-    
-  }
-
-  if(event.target.value=='migration-certificate'){
-    <div className="form-element">    {/* This field will appear only when we choose the Migration Certificate or Transcript option in the Application for field */}
-    <label htmlFor="semester">Upload Fee Receipt</label>
-    <input type="file" autoComplete='off' id="semester" className='field file' name="semester"></input>
-    </div>
-  }
-
-  if(event.target.value=='temporary-id-card'){
-    
-  }
-
-  if(event.target.value=='other'){
-  
-  }
+          )
+        } else if (documentSelection==='temporary-id-card') {
+          return (
+            <div>
+              some field
+            </div>
+          )
+        } else if (documentSelection==='other') {
+          return (
+            <div>
+              some field
+            </div>
+          )
+        }
+      })()}
 
             {/*
                Bonafide Certificate --> Purpose in Remark
