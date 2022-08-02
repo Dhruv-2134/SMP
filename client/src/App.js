@@ -7,9 +7,9 @@ import Login from './components/Login';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      { /* <Navbar/> 
       <Login/>
-      <Signup/>
+      <Signup/> */ }
       <Footer/>
     </div>
   );
