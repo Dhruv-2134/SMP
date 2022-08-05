@@ -9,6 +9,7 @@ import Home from './components/Home';
 
 function App() {
   return (
+    <>
     <Router>
       <div className="App">
         <Routes>
@@ -24,6 +25,14 @@ function App() {
         {/* <Footer /> */}
       </div>
     </Router>
+    {/* <nav className='Navbar'>
+      <img src="logo/clglogo.png" alt="Logo" />
+      <h1>IIITBH Student Management Portal</h1>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav> */}
+    </>
   );
 }
 
