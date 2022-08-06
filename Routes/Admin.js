@@ -8,11 +8,12 @@ router.post('/newadmin', async (req, res) => {
         console.log(req.body);
         let user = await User.create({
 
-            id: req.body.id,
+            identity: req.body.id,
             name: req.body.name,
             password: req.body.password
 
-        }).then(() => {
+        }).then((data) => {
+            console.log(data);
             res.json({ status: 0 });
         })
             .catch(() => {
