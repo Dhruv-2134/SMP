@@ -1,19 +1,18 @@
 const express = require('express');
-const User = require('../Model/Administration');
+const User = require('../Model/form');
 const router = express.Router();
 
-router.post('/newadmin', async (req, res) => {
+router.post('/formdetails', async (req, res) => {
     // res.send('Fill New Student details!! ');
     try {
         console.log(req.body);
         let user = await User.create({
+            studentname: req.body.studentname,
+            instituterollNo: req.body.instituterollNo,
+            fathername: req.body.fathername
+        
 
-            identity: req.body.identity,
-            name: req.body.name,
-            password: req.body.password
-
-        }).then((data) => {
-            console.log(data);
+        }).then(() => {
             res.json({ status: 0 });
         })
             .catch(() => {
