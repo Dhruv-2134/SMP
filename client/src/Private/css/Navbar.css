@@ -10,7 +10,7 @@
     display: flex;
     float: right;
     overflow: hidden;
-    margin: 5px;
+    margin-right: 5px;
     padding: 10px;
   }
   
@@ -19,12 +19,12 @@
     float: left; 
     margin: 5px;
     padding: 2px;
-    height: 80px;
+    height: 60px;
   }
   .Navbar h1{
     font-size:larger;
     color: whitesmoke;
-    margin-right: 20%;
+    margin-right: 47%;
     padding: 2px;
   }
   .Navbar a:hover{
