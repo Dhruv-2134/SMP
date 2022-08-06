@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import '../Private/css/Form.css'
+import style from '../Private/css/Form.css'
 
 export default function Form(props) {
 
@@ -39,33 +39,7 @@ const changeApplicationFor = (event) =>{
 }
 
 const changeDocumentType = (event) =>{
-  // changeDocumentType(event.target.value);
   setDocumentSelection(event.target.value);
-  
-
-
-
-  // if(event.target.value=='fee-receipt'){
-  //   setDocumentTypeVariable('fee-receipt');
-  // }
-  // if(event.target.value=='fee-demand-letter'){
-  //   setDocumentTypeVariable('fee-demand-letter');
-  // }
-  // if(event.target.value=='transcript'){
-  //   setDocumentTypeVariable('transcript');
-  // }
-  // if(event.target.value=='provisional-certificate'){
-  //   setDocumentTypeVariable('provisional-certificate');
-  // }
-  // if(event.target.value=='migration-certificate'){
-  //   setDocumentTypeVariable('migration-certificate');
-  // }
-  // if(event.target.value=='temporary-id-card'){
-  //   setDocumentTypeVariable('temporary-id-card');
-  // }
-  // if(event.target.value=='other'){
-  //   setDocumentTypeVariable('other');
-  // }
 }
 
 useEffect (()=> {console.log(documentSelection)});
@@ -82,6 +56,25 @@ const changeRemarks = (event) =>{
   setRemarks(event.target.value);
 }
 
+function formSubmit(e){
+  e.preventDefault();
+  fetch(``,{
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      studentname: studentName,
+      instituterollno: rollNumber,
+      fathersname: fathersName
+    })
+  }). then((data) => {
+    data.json();
+  }) .then((data) => {
+    console.log(data);
+  }) .catch((data) => {
+    console.log(data);
+  })
+}
+
   const [studentName,setStudentName]=useState('');
   const [rollNumber,setRollNumber]=useState('');
   const [fathersName,setFathersName]=useState('');
@@ -93,18 +86,16 @@ const changeRemarks = (event) =>{
   const [document,setDocument]=useState('');
   const [semester,setSemester]=useState('');
   const [remarks,setRemarks]=useState('');
-
   const [documentTypeVariable,setDocumentTypeVariable]= useState('');
+  const [documentSelection,setDocumentSelection]=useState('');
 
   // Boolean Variables
   const [applicationBoolean,setApplicationBoolean]= useState(true);
 
-  const [documentSelection,setDocumentSelection]=useState('');
-
   return (
     <div className='box'>
       <div className="heading">Submit Form</div>
-        <form className='form' action="" method='post'>
+        <form onSubmit={formSubmit} className='form' action="" method='post'>
 
           {/* Student Name */}
             <div className="form-element">
@@ -213,6 +204,7 @@ const changeRemarks = (event) =>{
           )
         } else if (documentSelection==='transcript') {
           return (
+            <>
             <div className="form-element">    {/* This field will appear only when we choose the Transcript option in the Application for field */}
      <div>
      Transcript Application Form
@@ -221,6 +213,11 @@ const changeRemarks = (event) =>{
        --Link--
      </div>
    </div>
+   <div className="form-element">    {/* This field will appear only when we choose the Migration Certificate or Transcript option in the Application for field */}
+    <label htmlFor="semester">Upload Fee Receipt</label>
+    <input type="file" autoComplete='off' id="semester" className='field file' name="semester"></input>
+    </div>
+            </>
           )
         } else if (documentSelection==='provisional-certificate') {
           return (
