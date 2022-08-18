@@ -15,7 +15,9 @@ app.set('view engine','ejs');
 app.use(express.static(__dirname+"/"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-app.use('/newstudent',require('./router/newstudent'));
+app.use('/newstudent',require('./Routes/Student'));
+app.use('/newadministration',require('./Routes/Admin'));
+app.use('/form',require('./Routes/formdetails'));
 
 
 app.get('/',(req,res)=>{
