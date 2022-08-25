@@ -1,0 +1,15 @@
+@media only screen and (max-width:600px) {
+    * {
+        font-size: 6px;
+    }
+    .btn {
+        font-size: 8px;
+    }
+}
+
+.con {
+    display: flex;
+    flex-direction: row;
+    flex:1;
+}
+

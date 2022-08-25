@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- awesome font install -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- w3.css install -->
+    <link rel="stylesheet" href="./w3.css">
+</head>
+<body>
+    <div class="w3-container w3-center w3-display " style="padding:60px">
+    <div class="login-box w3-container w3-dark-gray">
+        <h1 class="w3-center">Login</h1>
+    </div>
+        <form class = "w3-container w3-center w3-border " action="/profile.html" method="post">
+            <br>
+                <label class="w3-left fas fa-user">&nbsp;&nbsp;&nbsp;  Email</label>
+                <br>
+                <input class = "w3-input w3-hover-gray w3-hover-text-white" type="email" placeholder="Email..." name="Institution Email" required>
+                <br>
+                <br>
+                <label class="fas fa-lock w3-left">&nbsp;&nbsp;&nbsp;    Portal Password</label>
+                <br>
+                <input class = "w3-input w3-hover-gray w3-hover-text-white" type="password" placeholder="Portal Password...." name="Portal Password" required>
+                <br>
+                <br>
+                <label class="w3-left fa-solid fa-calendar">&nbsp;&nbsp;&nbsp;    Academic Year</label>
+                <br>
+                <select class="w3-select" name="Academic Year">
+                    <option value="0">Academic Year</option>
+                    <option value="1">2018-19</option>
+                    <option value="2">2019-20</option>
+                    <option value="3">2020-21</option>
+                    <option value="4">2021-22</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <label class="w3-left fa-solid fa-check">&nbsp;&nbsp;&nbsp;    Session</label>
+                <br>
+                <select class="w3-select" name="Session">
+                    <option value="0">Select</option>
+                    <option value="1">Autumn</option>
+                    <option value="2">Spring</option>
+                </select>
+                <br>
+                <br>
+                <br>
+            <input type="submit" class="btn w3-dark-gray w3-btn" value="Login">
+                <br>
+                <br>
+        </form>
+        </div>
+        </body>
+</html>
